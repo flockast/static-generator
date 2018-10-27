@@ -1,0 +1,13 @@
+<%
+data = {
+    title: "Пост #1"
+}
+%>
+
+<%= require('ejs-loader!../../parties/header.ejs')(data) %>
+
+<section>
+    <h1>Запись 1 йо</h1>
+</section>
+
+<%= require('ejs-loader!../../parties/footer.ejs')() %>

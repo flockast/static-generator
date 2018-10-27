@@ -1,0 +1,7 @@
+{
+  "route": [
+    {"/": "index"},
+    {"/about": "about"},
+    {"/category/post": "category/post"}
+  ]
+}

@@ -1,0 +1,13 @@
+<%
+data = {
+    title: "Главная страница"
+}
+%>
+
+<%= require('ejs-loader!../parties/header.ejs')(data) %>
+
+<section>
+    <h1>Главная страница йо</h1>
+</section>
+
+<%= require('ejs-loader!../parties/footer.ejs')() %>
