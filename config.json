@@ -1,7 +1,7 @@
 {
   "route": [
-    {"/": "index"},
-    {"/about": "about"},
-    {"/category/post": "category/post"}
+    { "/": "index" },
+    { "/about": "about" },
+    { "/category/post": "category/post" }
   ]
 }
