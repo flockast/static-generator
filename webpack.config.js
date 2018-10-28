@@ -2,9 +2,9 @@ const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const config = require("./config.json");
-var ImageminPlugin = require('imagemin-webpack-plugin').default
 
 module.exports = (env, options) => {
 
@@ -14,12 +14,10 @@ module.exports = (env, options) => {
 
     config.route.forEach(route => {
         for (key in route) {
-            let filename = `${key}/index.html`.split("/").filter(el => el !== "").join("/");
-            let template = `./src/pages/${route[key]}.ejs`;
             HtmlWebpackPlugins.push(
                 new HtmlWebpackPlugin({
-                    filename: filename,
-                    template: template
+                    filename: `${key}/index.html`.split("/").filter(el => el !== "").join("/"),
+                    template: `./src/pages/${route[key]}.ejs`
                 })
             )
         }
