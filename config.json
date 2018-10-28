@@ -1,5 +1,5 @@
 {
-  "route": [
+  "routing": [
     { "/": "index" },
     { "/about": "about" },
     { "/category/post": "category/post" }

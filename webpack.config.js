@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
-const config = require("./config.json");
+const {routing} = require("./config.json");
 
 module.exports = (env, options) => {
 
@@ -12,7 +12,7 @@ module.exports = (env, options) => {
 
     let HtmlWebpackPlugins = [];
 
-    config.route.forEach(route => {
+    routing.forEach(route => {
         for (key in route) {
             HtmlWebpackPlugins.push(
                 new HtmlWebpackPlugin({
