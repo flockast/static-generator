@@ -32,7 +32,7 @@ module.exports = (env, options) => {
         ],
         output: {
             path: path.resolve(__dirname, './dist'),
-            filename: 'assets/js/bundle.[name].js'
+            filename: 'static/bundle.[name].js'
         },
         devServer: {
             overlay: true
@@ -55,13 +55,14 @@ module.exports = (env, options) => {
             !isDev ? new OptimizeCSSAssetsPlugin({}) : () => {},
             new CopyWebpackPlugin([
                 {
-                    from: './src/assets/img',
-                    to: 'assets/img/[name].[ext]'
+                    from: './src/assets/*/*',
+                    to: 'static/[name].[ext]',
+                    ignore: [ '*.js', '*.styl', '*.sass', '*.scss', '*.pug' ]
                 }
             ]),
             new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }),
             new MiniCssExtractPlugin({
-                filename: 'assets/css/bundle.[name].css'
+                filename: 'static/bundle.[name].css'
             }),
         ].concat(HtmlWebpackPlugins)
     }
