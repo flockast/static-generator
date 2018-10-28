@@ -30,7 +30,8 @@ module.exports = (env, options) => {
         ],
         output: {
             path: path.resolve(__dirname, './dist'),
-            filename: 'static/bundle.[name].js'
+            filename: 'static/bundle.[name].js',
+            publicPath: "/"
         },
         devServer: {
             overlay: true
