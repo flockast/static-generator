@@ -2,7 +2,9 @@ const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const config = require("./config.json");
+var ImageminPlugin = require('imagemin-webpack-plugin').default
 
 module.exports = (env, options) => {
 
@@ -43,18 +45,24 @@ module.exports = (env, options) => {
                     test: /\.styl$/,
                     use: [
                         MiniCssExtractPlugin.loader,
-                        "css-loader",
+                        "css-loader?url=false",
                         "stylus-loader"
                     ]
                 }
             ]
         },
         plugins: [
-            !isDev ? new OptimizeCSSAssetsPlugin({}) : () => {
-            },
+            !isDev ? new OptimizeCSSAssetsPlugin({}) : () => {},
+            new CopyWebpackPlugin([
+                {
+                    from: './src/assets/img',
+                    to: 'assets/img/[name].[ext]'
+                }
+            ]),
+            new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }),
             new MiniCssExtractPlugin({
                 filename: 'assets/css/bundle.[name].css'
-            })
+            }),
         ].concat(HtmlWebpackPlugins)
     }
 };
