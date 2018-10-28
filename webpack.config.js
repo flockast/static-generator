@@ -39,14 +39,7 @@ module.exports = (env, options) => {
         module: {
             rules: [
                 {test: /\.js$/, exclude: /node_modules/, loader: "babel-loader"},
-                {
-                    test: /\.styl$/,
-                    use: [
-                        MiniCssExtractPlugin.loader,
-                        "css-loader?url=false",
-                        "stylus-loader"
-                    ]
-                }
+                {test: /\.styl$/, use: [MiniCssExtractPlugin.loader, "css-loader?url=false", "stylus-loader"]}
             ]
         },
         plugins: [
