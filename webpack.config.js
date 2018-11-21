@@ -58,7 +58,8 @@ module.exports = (env, options) => {
                         },
                         `sass-loader?sourceMap=${ isDev }`
                     ]
-                }
+                },
+                {test: /\.ejs$/, loader: "ejs-loader"},
             ]
         },
         plugins: [
