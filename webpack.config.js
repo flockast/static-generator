@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const {routing} = require("./config.json");
 
 module.exports = (env, options) => {
@@ -52,7 +51,6 @@ module.exports = (env, options) => {
                     ignore: [ '*.js', '*.styl', '*.sass', '*.scss', '*.pug' ]
                 }
             ]),
-            new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }),
             new MiniCssExtractPlugin({
                 filename: 'static/bundle.[name].css'
             }),
