@@ -1,5 +1,6 @@
 <%
 data = {
+    alias: 'post_1',
     title: "Пост #1"
 }
 %>
@@ -7,8 +8,9 @@ data = {
 <%= require('../../parties/header.ejs')(data) %>
 
 <section>
-    <h1>Запись #1 йо</h1>
+    <h1>Запись #1</h1>
     <img src="/static/img/picsum.jpg" alt="заснеженные горы на фоне молочно-голубого неба">
+    <p>Заснеженные горы на фоне молочно-голубого неба</p>
 </section>
 
 <%= require('../../parties/footer.ejs')() %>

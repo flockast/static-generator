@@ -1,14 +1,35 @@
 $color-font: #fff;
 $color-background: #111;
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   background: $color-background;
+  font-family: Consolas, monospace;
+  font-size: 1.8rem;
+  line-height: 1.6;
   color: $color-font;
-  font-family: Consolas;
 }
+
 a {
   color: $color-font;
 }
+
+header {
+  margin-bottom: 2rem;
+  nav {
+    a {
+      padding: 0 4rem;
+      &[data-active=true] {
+        box-shadow: 0 0 0 .1rem $color-font;
+      }
+    }
+  }
+}
+
 section {
-  box-shadow: inset 0 0 0 1px #fff;
+  box-shadow: inset 0 0 0 .1rem #fff;
+  padding: 3rem;
 }

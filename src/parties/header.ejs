@@ -5,14 +5,13 @@
         <meta name="viewport"
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title><%=title%></title>
+        <title><%= title %></title>
     </head>
     <body>
-    <main class="wrapper">
         <header>
             <nav>
-                <a href="/">Главная</a> |
-                <a href="/about">О нас</a> |
-                <a href="/category/post">Статья</a>
+                <a href="/" data-active="<%= alias === 'index' %>">Главная</a> |
+                <a href="/about" data-active="<%= alias === 'about' %>">О нас</a> |
+                <a href="/category/post" data-active="<%= alias === 'post_1' %>">Статья</a>
             </nav>
         </header>
