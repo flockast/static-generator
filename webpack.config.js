@@ -25,7 +25,7 @@ module.exports = (env, options) => {
     return {
         entry: [
             './src/assets/js/main.js',
-            './src/assets/styles/main.styl'
+            './src/assets/styles/index.scss'
         ],
         output: {
             path: path.resolve(__dirname, './dist'),
@@ -39,7 +39,14 @@ module.exports = (env, options) => {
         module: {
             rules: [
                 {test: /\.js$/, exclude: /node_modules/, loader: "babel-loader"},
-                {test: /\.styl$/, use: [MiniCssExtractPlugin.loader, "css-loader?url=false", "stylus-loader"]}
+                {
+                    test: /\.(sa|sc|c)ss$/,
+                    use: [
+                        MiniCssExtractPlugin.loader,
+                        `css-loader?sourceMap=${isDev}&url=false`,
+                        `sass-loader?sourceMap=${isDev}`
+                    ]
+                }
             ]
         },
         plugins: [

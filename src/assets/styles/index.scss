@@ -1,0 +1,11 @@
+$color-font: #fff;
+$color-background: #111;
+
+body {
+  background: $color-background;
+  color: $color-font;
+  font-family: Consolas;
+}
+a {
+  color: $color-font;
+}

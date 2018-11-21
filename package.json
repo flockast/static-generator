@@ -12,9 +12,9 @@
     "ejs-loader": "^0.3.1",
     "html-webpack-plugin": "^4.0.0-beta.2",
     "mini-css-extract-plugin": "^0.4.4",
+    "node-sass": "^4.10.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.2",
+    "sass-loader": "^7.1.0",
     "webpack": "^4.23.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
