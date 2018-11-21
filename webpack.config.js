@@ -24,7 +24,7 @@ module.exports = (env, options) => {
 
     return {
         entry: [
-            './src/assets/js/main.js',
+            './src/assets/js/index.js',
             './src/assets/styles/index.scss'
         ],
         output: {
