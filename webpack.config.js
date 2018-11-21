@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 const {routing} = require("./config.json");
 
 module.exports = (env, options) => {
@@ -43,8 +44,19 @@ module.exports = (env, options) => {
                     test: /\.(sa|sc|c)ss$/,
                     use: [
                         MiniCssExtractPlugin.loader,
-                        `css-loader?sourceMap=${isDev}&url=false`,
-                        `sass-loader?sourceMap=${isDev}`
+                        `css-loader?sourceMap=${ isDev }&url=false`,
+                        {
+                            loader: "postcss-loader",
+                            options: {
+                                plugins: [
+                                    autoprefixer({
+                                        browsers: ['ie >= 8', 'last 4 version']
+                                    })
+                                ],
+                                sourceMap: isDev
+                            }
+                        },
+                        `sass-loader?sourceMap=${ isDev }`
                     ]
                 }
             ]
