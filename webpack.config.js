@@ -12,11 +12,11 @@ module.exports = (env, options) => {
     let HtmlWebpackPlugins = [];
 
     routing.forEach(route => {
-        for (key in route) {
+        for (page in route) {
             HtmlWebpackPlugins.push(
                 new HtmlWebpackPlugin({
-                    filename: `${key}/index.html`.split("/").filter(el => el !== "").join("/"),
-                    template: `./src/pages/${route[key]}.ejs`
+                    filename: `${page}/index.html`.split("/").filter(el => el !== "").join("/"),
+                    template: `./src/pages/${route[page]}.ejs`
                 })
             )
         }
