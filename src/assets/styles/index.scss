@@ -32,6 +32,9 @@ header {
       &[data-active=true] {
         box-shadow: 0 0 0 .1rem $color-font;
       }
+      &:hover {
+        background: #353535;
+      }
     }
   }
 }
