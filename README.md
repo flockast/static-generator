@@ -16,7 +16,7 @@ or
 $ yarn
 ```
 ## Configure
-In <b>./config.json</b> you can change routing (add or remove routes). Example:
+In <b>./routing.json</b> you can change routing (add or remove routes). Example:
 ```sh
 {
   "routing": [
