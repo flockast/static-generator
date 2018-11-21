@@ -6,6 +6,13 @@ Static generator
 ## Requirements
 You only need <b>node.js</b> pre-installed and you’re good to go.
 
+## Technologies
+- webpack
+- babel
+- ejs
+- sass
+- postcss (autoprefixer)
+
 ## Setup
 Install dependencies
 ```sh
@@ -16,7 +23,7 @@ or
 $ yarn
 ```
 ## Configure
-In <b>./routing.json</b> you can change routing (add or remove routes). Example:
+<b>routing.json</b> ~ {"link" : "filename"}. Example:
 ```sh
 {
   "routing": [
@@ -26,7 +33,6 @@ In <b>./routing.json</b> you can change routing (add or remove routes). Example:
   ]
 }
 ```
-"link" : "filename"
 
 ## Development
 Run the local webpack-dev-server with livereload and autocompile on [http://localhost:8080/](http://localhost:8080/)
