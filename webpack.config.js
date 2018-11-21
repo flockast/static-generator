@@ -46,9 +46,12 @@ module.exports = (env, options) => {
             !isDev ? new OptimizeCSSAssetsPlugin({}) : () => {},
             new CopyWebpackPlugin([
                 {
-                    from: './src/assets/*/*',
-                    to: 'static/[name].[ext]',
-                    ignore: [ '*.js', '*.styl', '*.sass', '*.scss', '*.pug' ]
+                    from: './src/assets/fonts',
+                    to: 'static/fonts/[name].[ext]',
+                },
+                {
+                    from: './src/assets/img',
+                    to: 'static/img/[name].[ext]',
                 }
             ]),
             new MiniCssExtractPlugin({
