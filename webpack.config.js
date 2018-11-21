@@ -66,11 +66,11 @@ module.exports = (env, options) => {
             new CopyWebpackPlugin([
                 {
                     from: './src/assets/fonts',
-                    to: 'static/fonts/[name].[ext]',
+                    to: 'static/fonts',
                 },
                 {
                     from: './src/assets/img',
-                    to: 'static/img/[name].[ext]',
+                    to: 'static/img',
                 }
             ]),
             new MiniCssExtractPlugin({
