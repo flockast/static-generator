@@ -11,8 +11,10 @@
     <body>
         <header>
             <nav>
-                <a href="/" data-active="<%= alias === 'index' %>">Главная</a> |
-                <a href="/about" data-active="<%= alias === 'about' %>">О нас</a> |
-                <a href="/category/post" data-active="<%= alias === 'post_1' %>">Статья</a>
+                <ul>
+                    <li><a href="/" data-active="<%= alias === 'index' %>">Главная</a></li>
+                    <li><a href="/about" data-active="<%= alias === 'about' %>">О нас</a></li>
+                    <li><a href="/category/post" data-active="<%= alias === 'post_1' %>">Статья</a></li>
+                </ul>
             </nav>
         </header>

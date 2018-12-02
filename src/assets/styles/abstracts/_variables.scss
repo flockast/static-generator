@@ -1,0 +1,27 @@
+// colors
+$base-font-color: white;
+$base-background: #111;
+
+// grid
+$columns: 12;
+$atom: (100% / $columns);
+
+$break_xs: 560px;
+$break_sm: 780px;
+$break_md: 960px;
+$break_lg: 1100px;
+
+$offset: 30px;
+$offset_xs: $offset;
+$offset_sm: $offset;
+$offset_md: $offset;
+$offset_lg: $offset;
+
+$offset_one_side: ($offset / 2);
+$offset_xs_one_side: ($offset_xs / 2);
+$offset_sm_one_side: ($offset_sm / 2);
+$offset_md_one_side: ($offset_md / 2);
+$offset_lg_one_side: ($offset_lg / 2);
+
+$fields: 15px;
+$fields_sm: 30px;

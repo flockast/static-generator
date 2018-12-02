@@ -1,0 +1,42 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font: 1.8rem / 1.6 consolas, monospace;  
+	color: $base-font-color;
+	background: $base-background;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input,textarea,select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+a {
+  color: $base-font-color;
+  text-decoration: none;
+  box-shadow: inset 0 -1px 0 0 $base-font-color;
+  padding-bottom: .5rem;
+  &:hover {
+    box-shadow: none;
+  }
+}
+
+
+h1 {
+  margin-bottom: 2rem;
+	font-size: 3.6rem;
+  font-weight: bold;
+  line-height: 1;
+}
