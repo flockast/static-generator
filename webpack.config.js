@@ -25,8 +25,8 @@ module.exports = (env, options) => {
 
     return {
         entry: [
-            './src/assets/js/index.js',
-            './src/assets/styles/index.scss'
+            './src/js/index.js',
+            './src/styles/index.scss'
         ],
         output: {
             path: path.resolve(__dirname, './dist'),
@@ -66,11 +66,11 @@ module.exports = (env, options) => {
             !isDev ? new OptimizeCSSAssetsPlugin({}) : () => {},
             new CopyWebpackPlugin([
                 {
-                    from: './src/assets/fonts',
+                    from: './src/fonts',
                     to: 'static/fonts',
                 },
                 {
-                    from: './src/assets/img',
+                    from: './src/img',
                     to: 'static/img',
                 }
             ]),
